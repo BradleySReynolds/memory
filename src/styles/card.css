@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  border: 1px solid #eee;
+  width: 200px;
+  height: 350px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 75%;
+  height: auto;
+}
+
+.matched {
+  background-color: yellowgreen;
+}
+
+.hidden {
+  display: none;
+}
