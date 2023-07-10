@@ -12,8 +12,26 @@
   margin: 0.5rem;
 
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+}
+
+.image-card {
+  width: auto;
+  max-width: 95%;
+  height: 50%;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 75%;
+  margin: 2rem auto;
+}
+
+.info-para {
+  font-size: 24px;
 }
 
 .card-container {
@@ -22,12 +40,14 @@
   align-items: center;
   flex-wrap: wrap;
 
+  margin: 0 auto;
+
   width: 75%;
   height: auto;
 }
 
 .matched {
-  background-color: yellowgreen;
+  border: 1px solid yellowgreen;
 }
 
 .hidden {

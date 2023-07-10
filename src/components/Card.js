@@ -9,7 +9,10 @@ const Card = (props) => {
       spec={props.name}
       onClick={props.handleClick}
     >
-      <h1 className={`${props.hidden ? "hidden" : ""}`}>{props.name}</h1>
+      <img
+        className={`image-card ${props.hidden ? "hidden" : ""}`}
+        src={props.image}
+      />
     </div>
   );
 };
