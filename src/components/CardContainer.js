@@ -3,6 +3,7 @@ import { cards } from "../data/cards";
 import { v4 as uuidv4 } from "uuid";
 import React, { useState, useEffect } from "react";
 import "../styles/card.css";
+import Outro from "./Outro";
 
 const CardContainer = (props) => {
   const [allCards, setAllCards] = useState([
@@ -17,6 +18,7 @@ const CardContainer = (props) => {
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
+  const [isGameover, setIsGameover] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,9 +33,12 @@ const CardContainer = (props) => {
   }, [isRunning]);
 
   useEffect(() => {
-    if (score === 12) {
-      setIsRunning(false);
-    }
+    setTimeout(() => {
+      if (score === 12) {
+        setIsRunning(false);
+        setIsGameover(true);
+      }
+    }, 500);
   }, [score]);
 
   useEffect(() => {
@@ -107,28 +112,34 @@ const CardContainer = (props) => {
   };
 
   return (
-    <div className="game-container">
-      <div className="info-container">
-        <p className="info-para">Name: {props.name}</p>
-        <p className="info-para">Remaining: {12 - score}</p>
-        <p className="info-para">Timer: {timer}</p>
-      </div>
-      <div className="card-container" onClick={getCards}>
-        {allCards.map((item) => {
-          return (
-            <Card
-              key={uuidv4()}
-              matched={item.matched}
-              hidden={item.hidden}
-              name={item.name}
-              id={item.id}
-              handleClick={getCards}
-              image={item.image}
-            />
-          );
-        })}
-      </div>
-    </div>
+    <>
+      {isGameover ? (
+        <Outro name={props.name} score={timer} />
+      ) : (
+        <div className="game-container">
+          <div className="info-container">
+            <p className="info-para">Name: {props.name}</p>
+            <p className="info-para">Remaining: {12 - score}</p>
+            <p className="info-para">Timer: {timer}</p>
+          </div>
+          <div className="card-container" onClick={getCards}>
+            {allCards.map((item) => {
+              return (
+                <Card
+                  key={uuidv4()}
+                  matched={item.matched}
+                  hidden={item.hidden}
+                  name={item.name}
+                  id={item.id}
+                  handleClick={getCards}
+                  image={item.image}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

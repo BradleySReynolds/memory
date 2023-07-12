@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.outro-container {
+  height: 75vh;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.highscores-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.highscores {
+  width: 75%;
+}
+
+.highscore-head {
+  margin: 2rem;
+}
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0.25rem;
+}
