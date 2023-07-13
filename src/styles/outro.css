@@ -2,10 +2,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Lilita One", cursive;
 }
 
 .outro-container {
-  height: 75vh;
+  height: 76vh;
   width: 100vw;
 
   display: flex;
@@ -23,7 +24,7 @@
 }
 
 .highscores {
-  width: 75%;
+  width: 50%;
 }
 
 .highscore-head {

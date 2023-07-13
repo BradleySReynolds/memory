@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Lilita One", cursive;
 }
 
 .intro-con {
@@ -9,10 +10,111 @@
   height: 75vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
+  padding: 4rem;
+}
+
+.intro-head {
+  font-size: 64px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.input-con {
+  height: 5%;
+  width: 25%;
+}
+
+.intro-ipt,
+.intro-btn {
+  height: 100%;
+}
+
+.intro-btn {
+  width: 30%;
+  background: transparent;
+  border: 1px solid #333;
+}
+
+.intro-ipt {
+  width: 70%;
+  padding: 0.5rem;
 }
 
 .intro-head {
   margin: 2rem;
+}
+
+select {
+  margin: 2rem;
+  width: 10%;
+  height: 5%;
+}
+
+@media screen and (max-width: 1024px) {
+  .intro-con {
+    padding: 2rem;
+  }
+
+  .intro-head {
+    font-size: 48px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .input-con {
+    height: 5%;
+    width: 50%;
+  }
+
+  select {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .intro-con {
+    padding: 1rem;
+  }
+
+  .intro-head {
+    font-size: 32px;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .input-con {
+    height: 7.5%;
+    width: 60%;
+  }
+
+  .intro-ipt {
+    font-size: 18px;
+    padding: 0.5rem;
+  }
+
+  .intro-btn {
+    font-size: 18px;
+  }
+
+  select {
+    margin: 1rem;
+    width: 25%;
+    height: 7.5%;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .intro-con {
+    padding: 0;
+    padding-top: 1rem;
+  }
+
+  .input-con {
+    height: 7.5%;
+    width: 85%;
+  }
 }

@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Lilita One", cursive;
 }
 
 .card {
@@ -26,7 +27,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 75%;
+  width: 95%;
   margin: 2rem auto;
 }
 
@@ -52,4 +53,42 @@
 
 .hidden {
   display: none;
+}
+
+@media screen and (max-width: 1500px) {
+  .card-container {
+    width: 85%;
+  }
+
+  .card {
+    width: 150px;
+    height: 275px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .info-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-para {
+    font-size: 18px;
+  }
+
+  .card-container {
+    width: 100%;
+  }
+
+  .card {
+    width: 125px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card {
+    width: 75px;
+    height: 150px;
+  }
 }

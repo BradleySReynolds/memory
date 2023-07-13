@@ -6,7 +6,6 @@ import Intro from "./Intro";
 const Outro = (props) => {
   const storedData = localStorage.getItem("scores");
   const [playAgain, setPlayAgain] = useState(false);
-  const [counter, setCounter] = useState(1);
   const [highscores, setHighscores] = useState(
     storedData
       ? JSON.parse(storedData)
@@ -29,13 +28,10 @@ const Outro = (props) => {
   };
 
   useEffect(() => {
-    setCounter(counter + 1);
-  }, [counter]);
-
-  useEffect(() => {
     if (highscores.length <= 10 || props.score < highscores[9].score) {
       const updatedHighscores = [...highscores];
-      if (props.score > highscores[9].score) {
+      if (props.score < highscores[9].score) {
+        console.log("hello");
         updatedHighscores.pop();
       }
       updatedHighscores.push({ name: props.name, score: props.score });
@@ -52,7 +48,7 @@ const Outro = (props) => {
       <div className="highscores-container">
         <h2 className="highscore-head">High Scores</h2>
         <div className="highscores">
-          {highscores.map((data, index) => {
+          {highscores.slice(0, 10).map((data, index) => {
             return (
               <div className="data-item" key={uuidv4()}>
                 <p>

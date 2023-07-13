@@ -32,6 +32,7 @@ const Intro = () => {
               type="text"
               placeholder="Enter your name..."
               onChange={handleChange}
+              maxLength={20}
             />
             <button className="intro-btn" onClick={handleClick}>
               Play
