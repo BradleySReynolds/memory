@@ -4,8 +4,12 @@ import "../styles/outro.css";
 import Intro from "./Intro";
 
 const Outro = (props) => {
+  // Call Local Storage for Previous Scores
   const storedData = localStorage.getItem("scores");
+
+  // Initialize States
   const [playAgain, setPlayAgain] = useState(false);
+  // If local storage exist set it as highscore, else use default.
   const [highscores, setHighscores] = useState(
     storedData
       ? JSON.parse(storedData)
@@ -27,11 +31,11 @@ const Outro = (props) => {
     setPlayAgain(true);
   };
 
+  // Shows the top 10 scores and sorts them least to greatest.
   useEffect(() => {
     if (highscores.length <= 10 || props.score < highscores[9].score) {
       const updatedHighscores = [...highscores];
       if (props.score < highscores[9].score) {
-        console.log("hello");
         updatedHighscores.pop();
       }
       updatedHighscores.push({ name: props.name, score: props.score });
