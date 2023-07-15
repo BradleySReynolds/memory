@@ -61,7 +61,9 @@ const Outro = (props) => {
           })}
         </div>
       </div>
-      <button onClick={handleChange}>Play Again</button>
+      <button className="play-again-btn" onClick={handleChange}>
+        Play Again
+      </button>
     </div>
   );
 };

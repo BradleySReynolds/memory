@@ -37,3 +37,29 @@
   width: 75%;
   margin: 0.25rem;
 }
+
+.play-again-btn {
+  padding: 0.25rem;
+  font-size: 18px;
+  margin: 1rrem;
+}
+
+@media screen and (max-width: 1000px) {
+  .highscores-container {
+    width: 75%;
+  }
+
+  .highscores {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .highscores-container {
+    width: 90%;
+  }
+
+  .highscores {
+    width: 90%;
+  }
+}
